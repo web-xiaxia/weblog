@@ -1,0 +1,6 @@
+server.port: 8091
+
+weblog:
+  logPaths:
+    - name: 第一个
+      path: logs/out.log
