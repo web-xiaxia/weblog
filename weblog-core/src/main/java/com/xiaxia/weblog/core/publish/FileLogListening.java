@@ -124,7 +124,7 @@ public class FileLogListening {
             String s = x.replace(" ", "&nbsp;")
                     .replaceAll("\t", "&nbsp;&nbsp;&nbsp;&nbsp;")
                     .replaceAll(((char) 27) + "\\[0;39m", "</span>")
-                    .replaceAll(((char) 27) + "\\[(\\d+)m", "<span style='color:$1'>");
+                    .replaceAll(((char) 27) + "\\[(\\d{1,2})m", "<span style='color:$1'>");
 
 
             for (Map.Entry<String, String> entry : COLOR_MAP.entrySet()) {
