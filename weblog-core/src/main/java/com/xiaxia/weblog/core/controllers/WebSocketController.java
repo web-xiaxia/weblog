@@ -37,7 +37,8 @@ public class WebSocketController {
         File file = ResourceUtils.getFile(weblogConfigPath.getPath());
         FileLogListening.XxRunnable.XXX xx = FileLogListening.XxRunnable.xx(file, (o) -> {
                     try {
-                        return o.length() - 50000;
+                        final long l = o.length() - 50000;
+                        return l < 0 ? 0 : l;
                     } catch (IOException e) {
                         return -1L;
                     }
