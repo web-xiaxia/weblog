@@ -10,6 +10,7 @@
         #log-name-list {
             padding: 0px;
             list-style: none;
+            position: fixed;
         }
 
         #log-name-list > li {
@@ -23,6 +24,10 @@
             display: block;
             width: 100%;
             background-color: white;
+        }
+
+        #show-main {
+            padding-top: 50px;
         }
     </style>
 </head>
