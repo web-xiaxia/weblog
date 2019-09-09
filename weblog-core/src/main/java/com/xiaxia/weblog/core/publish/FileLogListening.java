@@ -137,13 +137,10 @@ public class FileLogListening {
             XXX xxx = new XXX();
             xxx.lastTimeFileSize = -1;
             xxx.str = "";
-            try {
-
-                if (!logFile.exists()) {
-                    return xxx;
-                }
-
-                RandomAccessFile randomFile = new RandomAccessFile(logFile, "r");
+            if (!logFile.exists() || !logFile.isFile()) {
+                return xxx;
+            }
+            try (RandomAccessFile randomFile = new RandomAccessFile(logFile, "r")) {
 
                 long lastTimeFileSize = function.apply(randomFile);
                 if (lastTimeFileSize < 0) {
